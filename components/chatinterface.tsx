@@ -28,11 +28,14 @@ export default function ChatInterface() {
   const callBackend = useCallback(
     async (userMessage: string): Promise<string> => {
       try {
-        const res = await fetch('//165.132.192.52:5000/api/chat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: userMessage })
-        })
+        const res = await fetch(
+          'https://f687-165-132-192-52.ngrok-free.app/api/chat',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: userMessage })
+          }
+        )
         if (!res.ok) {
           throw new Error('Network response was not ok')
         }

@@ -7,9 +7,13 @@ import HistoryContainer from './history-container'
 import MenuContainer from './menu'
 
 export const Header: React.FC = async () => {
+  ;<meta
+    http-equiv="Content-Security-Policy"
+    content="upgrade-insecure-requests"
+  ></meta>
   return (
     <header className="fixed w-full p-1 md:p-2 flex justify-between items-center z-10 backdrop-blur md:backdrop-blur-none bg-background/80 md:bg-transparent">
-      <div className='flex gap-0.5'>
+      <div className="flex gap-0.5">
         <HistoryContainer location="header" />
         <a href="/">
           <IconLogo />
