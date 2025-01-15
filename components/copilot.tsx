@@ -191,3 +191,5 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
     )
   }
 }
+
+export default Copilot
