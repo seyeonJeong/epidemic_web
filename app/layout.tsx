@@ -1,3 +1,4 @@
+
 import type { Metadata, Viewport } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import './globals.css'
@@ -14,7 +15,7 @@ const fontSans = FontSans({
   variable: '--font-sans'
 })
 
-const title = 'Morphic'
+const title = 'AndLab'
 const description =
   'A fully open-source AI-powered answer engine with a generative UI.'
 

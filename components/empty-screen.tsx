@@ -3,20 +3,21 @@ import { ArrowRight } from 'lucide-react'
 
 const exampleMessages = [
   {
-    heading: 'What is OpenAI o1?',
-    message: 'What is OpenAI o1?'
+    heading: "What's today's COVID-19 case count?",
+    message: "What's today's COVID-19 case count?"
   },
   {
-    heading: 'Why is Nvidia growing rapidly?',
-    message: 'Why is Nvidia growing rapidly?'
+    heading: 'What is the current risk level of COVID-19?',
+    message: 'What is the current risk level of COVID-19?'
   },
   {
-    heading: 'Tesla vs Rivian',
-    message: 'Tesla vs Rivian'
+    heading: 'How do variants of viruses like COVID-19 affect the efficacy of treatments and vaccines?',
+    message: 'How do variants of viruses like COVID-19 affect the efficacy of treatments and vaccines?'
+    
   },
   {
-    heading: 'Summary: https://arxiv.org/pdf/2407.16833',
-    message: 'Summary: https://arxiv.org/pdf/2407.16833'
+    heading: 'How do healthcare systems prepare for and manage pandemics like COVID-19 or influenza outbreaks?',
+    message: 'How do healthcare systems prepare for and manage pandemics like COVID-19 or influenza outbreaks?'
   }
 ]
 export function EmptyScreen({

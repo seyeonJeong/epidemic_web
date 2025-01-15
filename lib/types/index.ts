@@ -97,7 +97,9 @@ export interface SearXNGResponse {
   results: SearXNGResult[]
 }
 
+
 export type SearXNGImageResult = string
+
 
 export type SearXNGSearchResults = {
   images: SearXNGImageResult[]

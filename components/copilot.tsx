@@ -15,9 +15,6 @@ import {
 } from 'ai/rsc'
 import type { AI } from '@/app/actions'
 import { useAppState } from '@/lib/utils/app-state'
-import { useLocalStorage } from '@/lib/hooks/use-local-storage'
-import { models } from '@/lib/types/models'
-import { getDefaultModelId } from '@/lib/utils'
 
 export type CopilotProps = {
   inquiry?: StreamableValue<PartialInquiry>
@@ -36,10 +33,6 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
   const { submit } = useActions()
   const { isGenerating, setIsGenerating } = useAppState()
   const [object, setObject] = useState<PartialInquiry>()
-  const [selectedModelId] = useLocalStorage<string>(
-    'selectedModel',
-    getDefaultModelId(models)
-  )
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value)
@@ -91,23 +84,9 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
     setCompleted(true)
     setSkipped(skip || false)
 
-    // Always create FormData
-    const formData = new FormData()
-
-    // Add model information
-    formData.set('model', selectedModelId)
-
-    // If not skipping, add form data from the event
-    if (!skip) {
-      const form = e.target as HTMLFormElement
-      const formEntries = Array.from(new FormData(form).entries())
-      formEntries.forEach(([key, value]) => {
-        if (key !== 'model') {
-          // Don't override model
-          formData.append(key, value)
-        }
-      })
-    }
+    const formData = skip
+      ? undefined
+      : new FormData(e.target as HTMLFormElement)
 
     const response = await submit(formData, skip)
     setMessages(currentMessages => [...currentMessages, response])

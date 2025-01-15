@@ -27,7 +27,7 @@ export const searchTool = ({ uiStream, fullResponse }: ToolProps) =>
       let hasError = false
       // Append the search section
       const streamResults = createStreamableValue<string>()
-      uiStream.append(
+      uiStream.update(
         <SearchSection
           result={streamResults.value}
           includeDomains={include_domains}
@@ -41,6 +41,7 @@ export const searchTool = ({ uiStream, fullResponse }: ToolProps) =>
       const searchAPI =
         (process.env.SEARCH_API as 'tavily' | 'exa' | 'searxng') || 'tavily'
 
+     
       const effectiveSearchDepth =
         searchAPI === 'searxng' &&
         process.env.SEARXNG_DEFAULT_DEPTH === 'advanced'
@@ -54,8 +55,7 @@ export const searchTool = ({ uiStream, fullResponse }: ToolProps) =>
       try {
         if (searchAPI === 'searxng' && effectiveSearchDepth === 'advanced') {
           // API route for advanced SearXNG search
-          const baseUrl =
-            process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+          const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
           const response = await fetch(`${baseUrl}/api/advanced-search`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -81,7 +81,7 @@ export const searchTool = ({ uiStream, fullResponse }: ToolProps) =>
             : searxngSearch)(
             filledQuery,
             max_results,
-            effectiveSearchDepth === 'advanced' ? 'advanced' : 'basic',
+            effectiveSearchDepth,
             include_domains,
             exclude_domains
           )

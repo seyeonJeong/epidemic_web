@@ -2,20 +2,18 @@ import { Copilot } from '@/components/copilot'
 import { createStreamableUI, createStreamableValue } from 'ai/rsc'
 import { CoreMessage, streamObject } from 'ai'
 import { PartialInquiry, inquirySchema } from '@/lib/schema/inquiry'
-import { getModel } from '../utils/registry'
+import { getModel } from '../utils'
 
 export async function inquire(
   uiStream: ReturnType<typeof createStreamableUI>,
-  messages: CoreMessage[],
-  model: string
+  messages: CoreMessage[]
 ) {
   const objectStream = createStreamableValue<PartialInquiry>()
   uiStream.update(<Copilot inquiry={objectStream.value} />)
 
   let finalInquiry: PartialInquiry = {}
-
-  const result = await streamObject({
-    model: getModel(model),
+  await streamObject({
+    model: getModel(),
     system: `As a professional web researcher, your role is to deepen your understanding of the user's input by conducting further inquiries when necessary.
     After receiving an initial response from the user, carefully assess whether additional questions are absolutely essential to provide a comprehensive and accurate answer. Only proceed with further inquiries if the available information is insufficient or ambiguous.
 
@@ -56,17 +54,17 @@ export async function inquire(
     messages,
     schema: inquirySchema
   })
-
-  try {
-    for await (const obj of result.partialObjectStream) {
-      if (obj) {
-        objectStream.update(obj)
-        finalInquiry = obj
+    .then(async result => {
+      for await (const obj of result.partialObjectStream) {
+        if (obj) {
+          objectStream.update(obj)
+          finalInquiry = obj
+        }
       }
-    }
-  } finally {
-    objectStream.done()
-  }
+    })
+    .finally(() => {
+      objectStream.done()
+    })
 
   return finalInquiry
 }
