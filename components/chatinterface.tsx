@@ -28,7 +28,7 @@ export default function ChatInterface() {
   const callBackend = useCallback(
     async (userMessage: string): Promise<string> => {
       try {
-        const res = await fetch('http://165.132.192.52:5000/api/chat', {
+        const res = await fetch('//165.132.192.52:5000/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message: userMessage })

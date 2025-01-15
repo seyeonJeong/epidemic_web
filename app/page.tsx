@@ -8,7 +8,6 @@ export default function Page() {
   const id = generateId()
 
   return (
-    
     <AI initialAIState={{ chatId: id, messages: [] }}>
       <Chat id={id} />
     </AI>
