@@ -53,7 +53,10 @@ export default function Menubar({ location, children }: Menuprops) {
           <Menu />
         </Button>
       </SheetTrigger>
-      <SheetContent side='right' className="w-80 rounded-tl-xl rounded-bl-xl fixed right-0 top-0 bottom-0">
+      <SheetContent
+        side="right"
+        className="w-80 rounded-tl-xl rounded-bl-xl fixed right-0 top-0 bottom-0"
+      >
         <SheetHeader>
           <SheetTitle className="flex items-center gap-1 text-sm font-normal mb-2">
             <Menu size={18} />
@@ -85,7 +88,7 @@ export default function Menubar({ location, children }: Menuprops) {
               onClick={() => handleMenuItemClick('/project3')}
             >
               <div className="text-sm font-medium truncate select-none">
-                COVID-19 Dashboard
+                Infectuious Disease AI Agent
               </div>
             </div>
 
@@ -97,8 +100,6 @@ export default function Menubar({ location, children }: Menuprops) {
                 LLM Powered Autonomous Agents
               </div>
             </div>
-
-
           </div>
           <Suspense fallback={<HistorySkeleton />}>{children}</Suspense>
         </div>
