@@ -3,21 +3,20 @@ import { ArrowRight } from 'lucide-react'
 
 const exampleMessages = [
   {
-    heading: "What's today's COVID-19 case count?",
-    message: "What's today's COVID-19 case count?"
+    heading: '마버그열의 유행 상황에 대해 알려줘',
+    message: '마버그열의 유행 상황에 대해 알려줘'
   },
   {
-    heading: 'What is the current risk level of COVID-19?',
-    message: 'What is the current risk level of COVID-19?'
+    heading: '최근 대한민국의 백일해 사례에 대해 알려줘',
+    message: '최근 대한민국의 백일해 사례에 대해 알려줘'
   },
   {
-    heading: 'How do variants of viruses like COVID-19 affect the efficacy of treatments and vaccines?',
-    message: 'How do variants of viruses like COVID-19 affect the efficacy of treatments and vaccines?'
-    
+    heading: '코로나 바이러스의 증상에 대해 알려줘',
+    message: '코로나 바이러스의 증상에 대해 알려줘'
   },
   {
-    heading: 'How do healthcare systems prepare for and manage pandemics like COVID-19 or influenza outbreaks?',
-    message: 'How do healthcare systems prepare for and manage pandemics like COVID-19 or influenza outbreaks?'
+    heading: '독감 예방법에 대해 알려줘',
+    message: '독감 예방법에 대해 알려줘'
   }
 ]
 export function EmptyScreen({
