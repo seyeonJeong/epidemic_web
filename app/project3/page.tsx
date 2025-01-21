@@ -110,7 +110,7 @@ const CovidStatsPage = () => {
           <br></br>본 연구에서는 검색 API로 Google Custom Search API[6]를
           활용한다. 이는 Google이 제공하는 사용자 정의 검색 엔진으로, 사용자가
           특정 웹사이트를 대상으로 맞춤화된 검색 기능을 제공할 수 있다. 또한
-          '세이프 서치'와 같은 기능을 통해 질 낮은 사이트에 접속하는 것을 방지
+          세이프 서치와 같은 기능을 통해 질 낮은 사이트에 접속하는 것을 방지
           하여 수집되는 문서들의 신뢰성을 보장한다. 또한 검색 API는 기존 LLM의
           한계점인 모델 지식이 학습된 시점에 머물게 되는 문제[7]를 해결한다.
         </p>
@@ -220,31 +220,33 @@ const CovidStatsPage = () => {
       <div className="mt-16 bg-white rounded-lg p-6 mx-auto max-w-5xl">
         <h2 className="text-2xl font-semibold mb-4 text-center">Reference</h2>
         <p className="text-gray-600">
-          [1] Dubey, Abhimanyu, et al. "The llama 3 herd of models." arXiv
-          preprint arXiv:2407.21783 (2024).<br></br>
-          [2] Yang, An, et al. "Qwen2. 5 Technical Report." arXiv preprint
-          arXiv:2412.15115 (2024). <br></br>
-          [3] Achiam, Josh, et al. "Gpt-4 technical report." arXiv preprint
-          arXiv:2303.08774 (2023). <br></br>
-          [4] Anthropic. "Claude 3.5 and a Sonnet for the Ages." Anthropic,
-          2023. https://www.anthropic.com/news/claude-3-5-sonnet. <br></br>
-          [5] Lin, Ji, et al. "AWQ: Activation-aware Weight Quantization for
-          On-Device LLM Compression and Acceleration." Proceedings of Machine
-          Learning and Systems 6 (2024): 87-100. <br></br>
+          [1] Dubey, Abhimanyu, et al. &quot;The llama 3 herd of models.&quot;
+          arXiv preprint arXiv:2407.21783 (2024).<br></br>
+          [2] Yang, An, et al. &quot;Qwen2. 5 Technical Report.&quot; arXiv
+          preprint arXiv:2412.15115 (2024). <br></br>
+          [3] Achiam, Josh, et al. &quot;Gpt-4 technical report.&quot; arXiv
+          preprint arXiv:2303.08774 (2023). <br></br>
+          [4] Anthropic. &quot;Claude 3.5 and a Sonnet for the Ages.&quot;
+          Anthropic, 2023. https://www.anthropic.com/news/claude-3-5-sonnet.{' '}
+          <br></br>
+          [5] Lin, Ji, et al. &quot;AWQ: Activation-aware Weight Quantization
+          for On-Device LLM Compression and Acceleration.&quot; Proceedings of
+          Machine Learning and Systems 6 (2024): 87-100. <br></br>
           [6] Google Custom Search
           https://programmablesearchengine.google.com/about/ <br></br>
-          [7] Zhao, Wayne Xin, et al. "A survey of large language models." arXiv
-          preprint arXiv:2303.18223 (2023). <br></br>[8] Lewis, Patrick, et al.
-          "Retrieval-augmented generation for knowledge-intensive nlp tasks."
-          Advances in Neural Information Processing Systems 33 (2020):
-          9459-9474. <br></br>[9] Douze, Matthijs, et al. "The faiss library."
-          arXiv preprint arXiv:2401.08281 (2024). <br></br>[10] Wikipedia,
-          https://www.wikipedia.org/ <br></br>[11] 감염병 포털,
-          https://dportal.kdca.go.kr/pot/index.do <br></br>[12] 질병관리청,
-          https://www.kdca.go.kr/ <br></br>[13] AI Hub, https://www.aihub.or.kr/{' '}
-          <br></br>[14] Zheng, Lianmin, et al. "Judging llm-as-a-judge with
-          mt-bench and chatbot arena." Advances in Neural Information Processing
-          Systems 36 (2023): 46595-46623.
+          [7] Zhao, Wayne Xin, et al. &quot;A survey of large language
+          models.&quot; arXiv preprint arXiv:2303.18223 (2023). <br></br>[8]
+          Lewis, Patrick, et al. &quot;Retrieval-augmented generation for
+          knowledge-intensive nlp tasks.&quot; Advances in Neural Information
+          Processing Systems 33 (2020): 9459-9474. <br></br>[9] Douze, Matthijs,
+          et al. &quot;The faiss library.&quot; arXiv preprint arXiv:2401.08281
+          (2024). <br></br>[10] Wikipedia, https://www.wikipedia.org/ <br></br>
+          [11] 감염병 포털, https://dportal.kdca.go.kr/pot/index.do <br></br>
+          [12] 질병관리청, https://www.kdca.go.kr/ <br></br>[13] AI Hub,
+          https://www.aihub.or.kr/
+          <br></br>[14] Zheng, Lianmin, et al. &quot;Judging llm-as-a-judge with
+          mt-bench and chatbot arena.&quot; Advances in Neural Information
+          Processing Systems 36 (2023): 46595-46623.
         </p>
       </div>
     </div>
