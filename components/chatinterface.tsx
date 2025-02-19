@@ -29,7 +29,7 @@ export default function ChatInterface() {
     async (userMessage: string): Promise<string> => {
       try {
         const res = await fetch(
-          'https://d31b-165-132-192-52.ngrok-free.app/api/chat',
+          'https://f4b3-165-132-192-52.ngrok-free.app/api/chat',
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
